@@ -1,0 +1,17 @@
+ext.akkaVersion = '2.3.3'
+
+apply plugin: 'scala'
+apply plugin: 'application'
+
+applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8", "-Dconfig.file=application.conf"]
+mainClassName = 'sample.loadbalancer.Main'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "com.typesafe.akka:akka-actor_2.11:$akkaVersion"
+    compile "com.typesafe.akka:akka-slf4j_2.11:$akkaVersion"
+    runtime "org.slf4j:slf4j-simple:1.7.7"
+}
